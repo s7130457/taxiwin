@@ -85,6 +85,7 @@ app.get('/', function(req, res) {
   res.send('hello world');
 });
 
+// express預設port 3000，但heroku不是，要轉換port
 const server = app.listen(process.env.PORT || 8080, function() {
   const port = server.address().port;
   console.log("Linebot App now running on port", port);
