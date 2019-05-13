@@ -1,0 +1,16 @@
+{
+  "name": "taxiwin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "npm test"
+  },
+  "author": "jeni",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "linebot": "^1.5.1"
+  }
+}
