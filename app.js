@@ -74,8 +74,11 @@ function callTaxi(msg) {
   if (msg === '叫車') {
     return myResult = btnTemplate;
   }
-  if (msg === '搶票') {
-    return myResult = Ticket;
+  else if (msg === '搶票') {
+    return [
+      { type: 'text', text: 'Hello, world 1' },
+      { type: 'text', text: 'Hello, world 2' }
+    ];
   }
   return;
 }
