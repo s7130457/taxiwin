@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const linebot = require('linebot');
-const script = require(`./src/forestTicket`)
+const Ticket = require(`./src/forestTicket`)
 
 app.use(express.static('public'));
 
@@ -11,7 +11,7 @@ const bot = linebot({
   channelAccessToken: process.env.channelAccessToken
 });
 
-const btnTemplate={
+const btnTemplate = {
   type: 'template',
   altText: 'this is a confirm template',
   template: {
@@ -73,6 +73,9 @@ function handleBtn(msg) {
 function callTaxi(msg) {
   if (msg === '叫車') {
     return myResult = btnTemplate;
+  }
+  if (msg === '搶票') {
+    return myResult = Ticket;
   }
   return;
 }
