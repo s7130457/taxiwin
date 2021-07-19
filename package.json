@@ -11,6 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4",
-    "linebot": "^1.5.1"
+    "linebot": "^1.5.1",
+    "node-cron": "^3.0.0",
+    "node-fetch": "^2.6.1"
   }
 }
