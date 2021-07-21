@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const linebot = require('linebot')
-const routes = require(`./src/routes`)
+const routes = require(`./api`)
 
 app.use('/', express.static('public'));
 /*
