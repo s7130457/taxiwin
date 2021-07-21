@@ -1,10 +1,13 @@
 const express = require('express')
+const lineRoutes = require('./line')
 
 const router = express.Router()
 
 router.get('/', (req, res) => {
   res.send('<h1>server is running</h1>');
 })
+
+router.use('/line', lineRoutes)
 
 router.use('/test', (req, res) => {
   console.log('hihihi');
