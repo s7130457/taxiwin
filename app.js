@@ -1,15 +1,15 @@
-const express = require('express');
-const app = express();
-const linebot = require('linebot');
-const Ticket = require(`./src/forestTicket`)
+const express = require('express')
+const app = express()
+const linebot = require('linebot')
+const routes = require(`./src/routes`)
 
-app.use(express.static('public'));
-
+app.use('/', express.static('public'));
+/*
 const bot = linebot({
   channelId: process.env.channelId,
   channelSecret: process.env.channelSecret,
   channelAccessToken: process.env.channelAccessToken
-});
+})
 
 const btnTemplate = {
   type: 'template',
@@ -27,7 +27,7 @@ const btnTemplate = {
           data: '包車旅遊'
       }]
   }
-};
+}
 
 
 //LineBot處理使用者按下選單的函式
@@ -48,7 +48,7 @@ bot.on('postback', function (event) {
           console.log(error);
       });
   }
-});
+})
 
 bot.on('message', function (event) {
   let handleMsg='';
@@ -64,7 +64,7 @@ bot.on('message', function (event) {
           console.log('message error');
           console.log(error);
       });
-});
+})
 
 function handleBtn(msg) {
   return `您點擊【${msg}】，立刻為您處理`;
@@ -90,7 +90,8 @@ app.post('/', linebotParser);
 app.get('/', function(req, res) {
   res.send('hello world');
 });
-
+*/
+app.use(`/api`, routes)
 // express預設port 3000，但heroku不是，要轉換port
 const server = app.listen(process.env.PORT || 8080, function() {
   const port = server.address().port;
