@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const linebot = require('linebot')
-const routes = require(`./api`)
+const routes = require(`./api/index`)
 
 /*
 const bot = linebot({
@@ -90,7 +90,7 @@ app.get('/', function(req, res) {
   res.send('hello world');
 });
 */
-app.use(`/api`, routes)
+app.use('/api', routes)
 // express預設port 3000，但heroku不是，要轉換port
 const server = app.listen(process.env.PORT || 8080, function() {
   const port = server.address().port;
