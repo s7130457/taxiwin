@@ -3,7 +3,6 @@ const app = express()
 const linebot = require('linebot')
 const routes = require(`./api`)
 
-app.use('/', express.static('public'));
 /*
 const bot = linebot({
   channelId: process.env.channelId,
