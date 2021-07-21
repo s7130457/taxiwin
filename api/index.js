@@ -3,7 +3,7 @@ const lineRoutes = require('./line')
 
 const router = express.Router()
 
-router.get('/', (req, res) => {
+router.use('/', (req, res) => {
   res.send('<h1>server is running</h1>');
 })
 
