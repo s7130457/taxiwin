@@ -86,9 +86,9 @@ const linebotParser = bot.parser();
 app.post('/', linebotParser);
 
 // respond with "hello world" when a GET request is made to the homepage
-app.use('/', function(req, res) {
+app.get('/', function(req, res) {
   res.send('hello world');
-});
+})
 
 
 app.use('/api', routes)
