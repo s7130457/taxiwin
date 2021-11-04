@@ -87,11 +87,10 @@ app.post('/', linebotParser);
 
 // respond with "hello world" when a GET request is made to the homepage
 app.get('/', function(req, res) {
-  res.send('<h1>In /api/line</h1>');
-
+  res.send('hello world');
 })
 
-app.use('/api', routes)
+// app.use('/api', routes)
 
 // express預設port 3000，但heroku不是，要轉換port
 const server = app.listen(process.env.PORT || 8080, function() {
